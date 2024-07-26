@@ -15,4 +15,6 @@ abstract class Strings {
   static const pleaseEnterConfirmPassword = 'Please enter confirm password';
   static const requiredField='Required field';
   static const pleaseEnterAValidEmail='Please enter a valid email';
+  static const topHeadLines='Top Headlines';
+  static const newsSource='News Source';
 }

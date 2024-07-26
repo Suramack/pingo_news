@@ -29,6 +29,15 @@ class BrandText extends StatelessWidget {
       fontFamily: 'Poppins',
     ),
   });
+    const BrandText.grey({
+    super.key,
+    required this.data,
+    this.textStyle = const TextStyle(
+      fontSize: BrandFontSize.subtitle2,
+      color: AppColor.greyFD,
+      fontFamily: 'Poppins',
+    ),
+  });
 
   @override
   Widget build(BuildContext context) {
