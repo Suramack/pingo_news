@@ -33,29 +33,35 @@ class _SignupScreenState extends State<SignupScreen> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            const Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                BrandText(
-                  data: Strings.pingoNews,
-                  textStyle: BrandTextStyle(
-                    color: AppColor.primary,
-                    fontSize: BrandFontSize.heeadline1,
+            const Padding(
+              padding: EdgeInsets.symmetric(horizontal: 16),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  BrandVSpace(
+                    height: 40,
                   ),
-                ),
-                BrandVSpace(
-                  height: 50,
-                ),
-                BrandTextField(
-                  hintText: Strings.name,
-                ),
-                BrandTextField(
-                  hintText: Strings.email,
-                ),
-                BrandTextField(
-                  hintText: Strings.password,
-                ),
-              ],
+                  BrandText(
+                    data: Strings.pingoNews,
+                    textStyle: BrandTextStyle(
+                      color: AppColor.primary,
+                      fontSize: BrandFontSize.heeadline1,
+                    ),
+                  ),
+                  BrandVSpace(
+                    height: 50,
+                  ),
+                  BrandTextField(
+                    hintText: Strings.name,
+                  ),
+                  BrandTextField(
+                    hintText: Strings.email,
+                  ),
+                  BrandTextField(
+                    hintText: Strings.password,
+                  ),
+                ],
+              ),
             ),
             BrandButton.primary(
               onTap: () {},
