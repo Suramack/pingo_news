@@ -16,6 +16,7 @@ class MyApp extends StatelessWidget {
       title: 'Pingo News',
       theme: Themes.lightTheme(),
       routerConfig: routerConfig,
+      debugShowCheckedModeBanner: false,
     );
   }
 }

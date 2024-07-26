@@ -15,7 +15,7 @@ class BrandText extends StatelessWidget {
     required this.data,
     this.textStyle = const TextStyle(
       fontSize: BrandFontSize.subtitle1,
-      color: AppColor.black,
+      color: AppColor.primary,
       fontWeight: FontWeight.w400,
     ),
   });

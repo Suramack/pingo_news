@@ -14,26 +14,24 @@ final GoRouter routerConfig = GoRouter(
       builder: (BuildContext context, GoRouterState state) {
         return const SplashScreen();
       },
-      routes: <RouteBase>[
-        GoRoute(
-          path: RouteName.signup,
-          builder: (BuildContext context, GoRouterState state) {
-            return const SignupScreen();
-          },
-        ),
-        GoRoute(
-          path: RouteName.login,
-          builder: (BuildContext context, GoRouterState state) {
-            return const LoginScreen();
-          },
-        ),
-        GoRoute(
-          path: RouteName.news,
-          builder: (BuildContext context, GoRouterState state) {
-            return const NewsScreen();
-          },
-        ),
-      ],
+    ),
+    GoRoute(
+      path: RouteName.signup,
+      builder: (BuildContext context, GoRouterState state) {
+        return const SignupScreen();
+      },
+    ),
+    GoRoute(
+      path: RouteName.login,
+      builder: (BuildContext context, GoRouterState state) {
+        return const LoginScreen();
+      },
+    ),
+    GoRoute(
+      path: RouteName.news,
+      builder: (BuildContext context, GoRouterState state) {
+        return const NewsScreen();
+      },
     ),
   ],
 );
