@@ -24,9 +24,11 @@ class BrandRichText extends StatelessWidget {
             style: BrandTextStyle.brandTextStyle2.copyWith(),
           ),
           TextSpan(
-            text: actionValue,
-            style: BrandTextStyle.brandTextStyle2
-                .copyWith(color: AppColor.primary),
+            text: ' $actionValue',
+            style: BrandTextStyle.brandTextStyle2.copyWith(
+              color: AppColor.primary,
+              fontWeight: FontWeight.w500,
+            ),
             recognizer: TapGestureRecognizer()
               ..onTap = () {
                 onTap();

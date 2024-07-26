@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:pingo_news/src/theme/colors.dart';
 
 class BaseLayout extends StatelessWidget {
   final Widget? child;
@@ -7,9 +8,17 @@ class BaseLayout extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: appBar,
-      body: child,
+    return Listener(
+      behavior: HitTestBehavior.opaque,
+      onPointerDown: (_) {
+        FocusManager.instance.primaryFocus?.unfocus();
+      },
+      child: Scaffold(
+        backgroundColor: AppColor.greyFD,
+        appBar: appBar,
+        resizeToAvoidBottomInset: false,
+        body: child,
+      ),
     );
   }
 }

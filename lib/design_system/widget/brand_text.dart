@@ -17,6 +17,7 @@ class BrandText extends StatelessWidget {
       fontSize: BrandFontSize.subtitle1,
       color: AppColor.primary,
       fontWeight: FontWeight.w400,
+      fontFamily: 'Poppins',
     ),
   });
   const BrandText.secondary({
@@ -25,6 +26,7 @@ class BrandText extends StatelessWidget {
     this.textStyle = const TextStyle(
       fontSize: BrandFontSize.subtitle2,
       color: AppColor.black,
+      fontFamily: 'Poppins',
     ),
   });
 

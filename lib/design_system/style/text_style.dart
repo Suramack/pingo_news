@@ -8,7 +8,7 @@ class BrandTextStyle extends TextStyle {
     color: AppColor.black,
     fontWeight: FontWeight.w400,
   );
-   static const brandTextStyle2 = TextStyle(
+  static const brandTextStyle2 = TextStyle(
     fontSize: BrandFontSize.body,
     color: AppColor.black,
     fontWeight: FontWeight.w400,
@@ -19,9 +19,12 @@ class BrandTextStyle extends TextStyle {
   @override
   // ignore: overridden_fields
   final double? fontSize;
+  @override
+  // ignore: overridden_fields
+  final FontWeight? fontWeight;
   const BrandTextStyle({
     this.color,
     this.fontSize,
+    this.fontWeight,
   });
-
 }
