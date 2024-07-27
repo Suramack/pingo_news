@@ -4,7 +4,7 @@ import 'package:riverpod/riverpod.dart';
 import '../../model/news/response_model/news_response_model.dart';
 
 abstract class NewsRepo {
-  Future<Article?> getTopHeadline();
+  Future<List<Article>?> getTopHeadline();
 }
 
 final newsRepoProvider = Provider<NewsRepo>((ref) => NewsService());

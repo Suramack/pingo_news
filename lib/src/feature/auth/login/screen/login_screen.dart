@@ -25,6 +25,14 @@ class _LoginScreenState extends State<LoginScreen> {
     context.go(RouteName.signup);
   }
 
+  void loginOnTap() {
+    bool isValid = formKey.currentState?.validate() ?? false;
+    if (isValid) {
+      // TODO: check from firebase and fetch data
+      context.go(RouteName.news);
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return BaseLayout(
@@ -98,7 +106,7 @@ class _LoginScreenState extends State<LoginScreen> {
                               title: Strings.login,
                               fontWeight: FontWeight.w500,
                               onTap: () {
-                                formKey.currentState?.validate();
+                                loginOnTap();
                               },
                             ),
                           ),

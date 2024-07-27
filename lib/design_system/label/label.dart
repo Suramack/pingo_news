@@ -5,6 +5,7 @@ abstract class Strings {
   static const email = 'Email';
   static const password = 'Password';
   static const confirmPassword = 'Confirm password';
+  static const incorrectConfirmPassword = 'Incorrect confirm password';
   static const signup = 'Signup';
   static const login = 'Login';
   static const alreadyHaveAnAccount = 'Already have an account?';

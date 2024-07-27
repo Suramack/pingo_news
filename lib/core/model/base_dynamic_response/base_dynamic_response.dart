@@ -1,7 +1,9 @@
-class BaseDynamicResponse <T> {
+import 'package:pingo_news/core/model/news/response_model/news_response_model.dart';
+
+class BaseDynamicResponse {
   final String status;
   final int totalResults;
-  final dynamic articles;
+  final List<Article>? articles;
   final String? message;
 
   BaseDynamicResponse({
@@ -12,18 +14,25 @@ class BaseDynamicResponse <T> {
   });
 
   factory BaseDynamicResponse.fromJson(Map<String, dynamic> json) {
+    // Convert the articles from JSON
+    List<Article> articles = (json['articles'] as List<dynamic>)
+        .map((articleJson) =>
+            Article.fromJson(articleJson as Map<String, dynamic>))
+        .toList();
+
     return BaseDynamicResponse(
-        status: json['status'] as String,
-        totalResults: json['totalResults'] as int,
-        articles: json['articles'] as T,
-        message: json['message'] as String?);
+      status: json['status'] as String,
+      totalResults: json['totalResults'] as int,
+      articles: articles,
+      message: json['message'] as String?,
+    );
   }
 
   Map<String, dynamic> toJson() {
     return {
       'status': status,
       'totalResults': totalResults,
-      'articles': articles,
+      'articles': articles?.map((article) => article.toJson()).toList(),
       'message': message,
     };
   }

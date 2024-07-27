@@ -9,18 +9,16 @@ import 'package:pingo_news/util/enum/network_status.dart';
 
 class NewsService implements NewsRepo {
   @override
-  Future<Article?> getTopHeadline() async {
+  Future<List<Article>?> getTopHeadline() async {
     var response = await NetworkClient.get(
       endPoint: '${EndPoint.topHeadline}?country=IN',
     );
     if (response?.statusCode == NetworkStatus.status200.statusCode) {
       var json = jsonDecode(response?.body ?? '');
-      var k = BaseDynamicResponse<Article>.fromJson(json);
-      print(k.articles as Article);
-      //  return k;
+      var k = BaseDynamicResponse.fromJson(json);
+      return k.articles ?? [];
     }
 
     return null;
   }
 }
-

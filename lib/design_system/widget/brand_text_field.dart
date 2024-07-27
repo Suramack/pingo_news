@@ -7,6 +7,7 @@ class BrandTextField extends StatelessWidget {
   final String? hintText, errorString;
   final bool obscureText;
   final String? Function(String?)? validator;
+  final TextEditingController? controller;
 
   const BrandTextField({
     super.key,
@@ -14,18 +15,21 @@ class BrandTextField extends StatelessWidget {
     this.obscureText = false,
     this.errorString,
     this.validator,
+    this.controller,
   });
 
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      controller: controller,
       obscureText: obscureText,
-      validator:validator?? (value) {
-        if (value == null || value.isEmpty) {
-          return errorString ?? Strings.requiredField;
-        }
-        return null;
-      },
+      validator: validator ??
+          (value) {
+            if (value == null || value.isEmpty) {
+              return errorString ?? Strings.requiredField;
+            }
+            return null;
+          },
       decoration: InputDecoration(
         filled: true,
         fillColor: Colors.white,

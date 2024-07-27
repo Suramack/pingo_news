@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 import 'package:pingo_news/design_system/font/brand_font.dart';
 import 'package:pingo_news/design_system/label/label.dart';
@@ -14,7 +15,6 @@ import 'package:pingo_news/route/route_name.dart';
 import 'package:pingo_news/src/theme/colors.dart';
 import 'package:pingo_news/util/extentions/extensions.dart';
 import 'package:pingo_news/util/regular_expression/regular_expression.dart';
-import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 class SignupScreen extends ConsumerStatefulWidget {
   const SignupScreen({super.key});
@@ -26,8 +26,20 @@ class SignupScreen extends ConsumerStatefulWidget {
 class _SignupScreenState extends ConsumerState<SignupScreen> {
   GlobalKey<FormState> formKey = GlobalKey();
 
+  TextEditingController passwordController = TextEditingController();
+
+  TextEditingController confPasswordController = TextEditingController();
+
   void gotoLogin() {
     context.go(RouteName.login);
+  }
+
+  void signupOnTap() {
+    bool isValid = formKey.currentState?.validate() ?? false;
+    if (isValid) {
+      // TODO: check from firebase and fetch data
+      context.go(RouteName.news);
+    }
   }
 
   @override
@@ -81,18 +93,37 @@ class _SignupScreenState extends ConsumerState<SignupScreen> {
                       const BrandVSpace(
                         height: BrandSpace.gap14,
                       ),
-                      const BrandTextField(
+                      BrandTextField(
                         hintText: Strings.password,
                         errorString: Strings.pleaseEnterPassword,
                         obscureText: true,
+                        controller: passwordController,
+                        validator: (value) {
+                          if (value == null || value.isEmpty) {
+                            return Strings.pleaseEnterPassword;
+                          }
+
+                          return null;
+                        },
                       ),
                       const BrandVSpace(
                         height: BrandSpace.gap14,
                       ),
-                      const BrandTextField(
+                      BrandTextField(
                         hintText: Strings.confirmPassword,
                         errorString: Strings.pleaseEnterConfirmPassword,
                         obscureText: true,
+                        controller: confPasswordController,
+                        validator: (value) {
+                          if (value == null || value.isEmpty) {
+                            return Strings.pleaseEnterConfirmPassword;
+                          }
+                          if (confPasswordController.text !=
+                              passwordController.text) {
+                            return Strings.incorrectConfirmPassword;
+                          }
+                          return null;
+                        },
                       ),
                       const BrandVSpace(
                         height: BrandSpace.gap14,
@@ -118,7 +149,7 @@ class _SignupScreenState extends ConsumerState<SignupScreen> {
                               title: Strings.signup,
                               fontWeight: FontWeight.w500,
                               onTap: () {
-                                formKey.currentState?.validate();
+                                signupOnTap();
                               },
                             ),
                           ),

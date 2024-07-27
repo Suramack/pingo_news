@@ -6,8 +6,9 @@ import 'package:pingo_news/util/enum/network_status.dart';
 
 abstract class NetworkClient {
   static Future<http.Response?> get({required String endPoint}) async {
-    var response = await http.get(Uri.parse('{$appDomain$endPoint}'),
+    var response = await http.get(Uri.parse('$appDomain$endPoint'),
         headers: {'Authorization': apiKey});
+
     if (response.statusCode == NetworkStatus.status200.statusCode) {
       return response;
     } else if (response.statusCode == NetworkStatus.status400.statusCode) {

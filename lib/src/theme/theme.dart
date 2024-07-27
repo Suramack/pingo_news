@@ -5,6 +5,9 @@ class Themes {
   static lightTheme() {
     ThemeData(
       primaryColor: AppColor.primary,
+      appBarTheme: AppBarTheme(
+        backgroundColor: AppColor.primary,
+      ),
     );
   }
 }
