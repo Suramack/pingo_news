@@ -1,13 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:intl/intl.dart';
-import 'package:pingo_news/core/model/news/state_model/news_state_model.dart';
 import 'package:pingo_news/design_system/label/label.dart';
 import 'package:pingo_news/design_system/loader/brand_loader.dart';
 import 'package:pingo_news/design_system/style/brand_space.dart';
 import 'package:pingo_news/design_system/style/text_style.dart';
 import 'package:pingo_news/design_system/widget/base_layout.dart';
-import 'package:pingo_news/design_system/widget/brand_sized_box.dart';
 import 'package:pingo_news/design_system/widget/brand_text.dart';
 import 'package:pingo_news/src/feature/news/provider/news_provider.dart';
 import 'package:pingo_news/src/feature/news/widget/app_bar.dart';

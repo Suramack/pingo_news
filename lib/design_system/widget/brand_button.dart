@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:pingo_news/design_system/font/brand_font.dart';
 import 'package:pingo_news/design_system/style/brand_space.dart';
 import 'package:pingo_news/design_system/style/text_style.dart';

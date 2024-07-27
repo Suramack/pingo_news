@@ -5,7 +5,7 @@ class Themes {
   static lightTheme() {
     ThemeData(
       primaryColor: AppColor.primary,
-      appBarTheme: AppBarTheme(
+      appBarTheme: const AppBarTheme(
         backgroundColor: AppColor.primary,
       ),
     );

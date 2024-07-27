@@ -42,6 +42,7 @@ class BrandAppBar extends StatelessWidget implements PreferredSize {
   }
 
   @override
+  // ignore: recursive_getters
   Widget get child => child;
 
   @override
