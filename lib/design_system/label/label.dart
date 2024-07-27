@@ -17,4 +17,6 @@ abstract class Strings {
   static const pleaseEnterAValidEmail='Please enter a valid email';
   static const topHeadLines='Top Headlines';
   static const newsSource='News Source';
+  static const alert='alert';
+  static const ok='OK';
 }

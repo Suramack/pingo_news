@@ -14,16 +14,18 @@ import 'package:pingo_news/route/route_name.dart';
 import 'package:pingo_news/src/theme/colors.dart';
 import 'package:pingo_news/util/extentions/extensions.dart';
 import 'package:pingo_news/util/regular_expression/regular_expression.dart';
+import 'package:hooks_riverpod/hooks_riverpod.dart';
 
-class SignupScreen extends StatefulWidget {
+class SignupScreen extends ConsumerStatefulWidget {
   const SignupScreen({super.key});
 
   @override
-  State<SignupScreen> createState() => _SignupScreenState();
+  ConsumerState<SignupScreen> createState() => _SignupScreenState();
 }
 
-class _SignupScreenState extends State<SignupScreen> {
+class _SignupScreenState extends ConsumerState<SignupScreen> {
   GlobalKey<FormState> formKey = GlobalKey();
+
   void gotoLogin() {
     context.go(RouteName.login);
   }
